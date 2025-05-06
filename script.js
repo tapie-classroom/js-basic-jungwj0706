@@ -270,7 +270,7 @@ function gameOver() {
                 return false;
         }
     }
-    
+
     for (let col=0; col<4; col++) {
         for (let row=0; row<3; row++) {
             const index = row*4 + col;

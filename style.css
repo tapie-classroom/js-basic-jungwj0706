@@ -81,32 +81,32 @@ body {
     background-color: #f9f6f2;
 }
 .tile[data-value="4"] {
-    background-color: #eee4da;
+    background-color: #f4e7cc;
 }
 .tile[data-value="8"] {
     background-color: #edd3a8;
 }
 .tile[data-value="16"] {
-    background-color: #f2b179;
+    background-color: #e5b983;
 }
 .tile[data-value="32"] {
-    background-color: #f59563;
+    background-color: #dd9f5f;
 }
 .tile[data-value="64"] {
-    background-color: #f67c5f;
+    background-color: #d28241;
 }
 .tile[data-value="128"] {
-    background-color: #f65e3b;
+    background-color: #c96b30;
 }
 .tile[data-value="256"] {
-    background-color: #e64c2e;
+    background-color: #b75425;
 }
 .tile[data-value="512"] {
-    background-color: #d13f20;
+    background-color: #a3441e;
 }
 .tile[data-value="1024"] {
-    background-color: #b73214;
+    background-color: #8f3518;
 }
 .tile[data-value="2048"] {
-    background-color: #8f2410;
+    background-color: #7c2813;
 }
