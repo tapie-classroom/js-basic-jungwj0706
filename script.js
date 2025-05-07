@@ -125,35 +125,34 @@ function moveLeft() {
 function moveRight() {
     const allTiles = Array.from(document.querySelectorAll('.tile'));
 
-    for (let row=0; row<4; row++) {
-        const rowTiles = allTiles.slice(row*4, row*4+4);
+    for (let row = 0; row < 4; row++) {
+        const rowTiles = allTiles.slice(row * 4, row * 4 + 4);
         let tiles = rowTiles.map(tile => tile.textContent === "" ? 0 : parseInt(tile.textContent));
-        tiles = tiles.filter(value => value != 0);
+        
+        tiles = tiles.filter(value => value !== 0);
         tiles.reverse();
 
-        for (let i=0; i<tiles.length-1; i++) {
-            if (tiles[i] === tiles[i+1]) {
+        for (let i = 0; i < tiles.length - 1; i++) {
+            if (tiles[i] === tiles[i + 1]) {
                 tiles[i] *= 2;
                 score += tiles[i];
                 score_display.textContent = score;
                 updateBestscore();
 
-                rowTiles[i].classList.add("merge");
-                setTimeout(() => rowTiles[i].classList.remove("merge"), 100);
-
-                tiles[i+1]=0;
+                tiles[i + 1] = 0;
             }
         }
-        tiles = tiles.filter(value => value !== 0)
-        while (tiles.length < 4) 
-            tiles.push(0);
 
+        tiles = tiles.filter(value => value !== 0);
+        while (tiles.length < 4) tiles.push(0);
         tiles.reverse();
+
         tiles.forEach((value, i) => {
             rowTiles[i].textContent = value === 0 ? "" : value;
             rowTiles[i].setAttribute("data-value", value === 0 ? "" : value);
-        })
+        });
     }
+
     addGrid();
 
     if (gameOver()) {
@@ -164,9 +163,10 @@ function moveRight() {
                 localStorage.setItem("bestScore", bestScore);
                 document.getElementById("best").textContent = bestScore;
             }
-        })
+        });
     }
-} 
+}
+
 
 function moveUp() {
     const allTiles = Array.from(document.querySelectorAll('.tile'));
