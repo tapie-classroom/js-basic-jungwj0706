@@ -64,7 +64,6 @@ document.addEventListener("keydown", keyInput);
 function keyInput(event) {
     switch(event.key) {
         case "ArrowLeft":
-            console.log("왼쪽");
             moveLeft();
             break;
         case "ArrowRight":
@@ -128,8 +127,8 @@ function moveRight() {
 
     for (let row=0; row<4; row++) {
         const rowTiles = allTiles.slice(row*4, row*4+4);
-        const tiles = rowTiles.map(tile => tile.textContent === "" ? 0 : parseInt(tile.textContent));
-        tiles = tiles.filter(value => value !== 0);
+        let tiles = rowTiles.map(tile => tile.textContent === "" ? 0 : parseInt(tile.textContent));
+        tiles = tiles.filter(value => value != 0);
         tiles.reverse();
 
         for (let i=0; i<tiles.length-1; i++) {
