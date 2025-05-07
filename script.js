@@ -121,7 +121,7 @@ function moveLeft() {
         })
     }
 } 
-
+ㅡㅐㅍ
 function moveRight() {
     const allTiles = Array.from(document.querySelectorAll('.tile'));
 
